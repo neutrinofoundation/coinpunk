@@ -63,15 +63,6 @@ coinpunk.controllers.Dashboard.prototype.index = function() {
 
 coinpunk.controllers.Dashboard.prototype.updateExchangeRates = function(id) {
   coinpunk.pricing.getLatest(function(price, currency) {
-    $('#balanceExchange').text(' ≈ '+ parseFloat(price * $('#balance').text()).toFixed(2) + ' ' + currency);
-    $('#exchangePrice').text('1 NTR ≈ ' + price + ' ' + currency);
-
-    $('#'+id+' .exchangePrice').remove();
-
-    var prices = $('#'+id+' .addExchangePrice');
-    for(var i=0;i<prices.length;i++) {
-      $(prices[i]).append('<span class="exchangePrice pull-right"><small>'+($(prices[i]).text().split(' ')[0] * price).toFixed(2)+' ' +currency+'</small></span>');
-    }
   });
 };
 

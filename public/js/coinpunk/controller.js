@@ -94,15 +94,6 @@ coinpunk.Controller.prototype.friendlyTimeString = function(timestamp) {
 
 coinpunk.Controller.prototype.updateExchangeRates = function(id) {
   coinpunk.pricing.getLatest(function(price, currency) {
-    $('#balanceExchange').text(' ≈ '+ parseFloat(price * $('#balance').text()).toFixed(2) + ' ' + currency);
-    $('#exchangePrice').text('1 NTR ≈ ' + price + ' ' + currency);
-
-    $('#'+id+' .exchangePrice').remove();
-
-    var prices = $('#'+id+' .addExchangePrice');
-    for(var i=0;i<prices.length;i++) {
-      $(prices[i]).append('<span class="exchangePrice"><small>('+($(prices[i]).text().trim().split(' ')[0] * price).toFixed(2)+' ' +currency+')</small></span>');
-    }
   });
 };
 
