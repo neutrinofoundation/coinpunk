@@ -95,7 +95,7 @@ coinpunk.Controller.prototype.friendlyTimeString = function(timestamp) {
 coinpunk.Controller.prototype.updateExchangeRates = function(id) {
   coinpunk.pricing.getLatest(function(price, currency) {
     $('#balanceExchange').text(' ≈ '+ parseFloat(price * $('#balance').text()).toFixed(2) + ' ' + currency);
-    $('#exchangePrice').text('1 BTC ≈ ' + price + ' ' + currency);
+    $('#exchangePrice').text('1 NTR ≈ ' + price + ' ' + currency);
 
     $('#'+id+' .exchangePrice').remove();
 

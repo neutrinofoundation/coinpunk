@@ -8259,10 +8259,6 @@ td.visible-print {
 .fa-krw:before {
   content: "\f159";
 }
-.fa-bitcoin:before,
-.fa-btc:before {
-  content: "\f15a";
-}
 .fa-file:before {
   content: "\f15b";
 }
